@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portal de Eventos</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="css/tab-navegacao/navegacao.css">!-->
+</head>
+<body>
+<!-- Inicio da barra de menu !-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="" class="navbar-brand">Portal de Eventos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Registrar-se </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <section id="titulos" class="mt-5">
+            <h6>Bem vindo ao Portal de Eventos, Cursos e Serviços </h6>
+            <p><em>Faça sua inscrição nos eventos e cursos ou solicite os serviços oferecidos pela Fundação.</em></p>
+            <hr>
+        </section>
+        <section id="eventos-cursos-servivos" class="mt-5">
+            <nav>
+                <!-- Inicia o tab de navegação !-->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="cursos" data-toggle="tab" href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="true">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="eventos" data-toggle="tab" href="#nav-eventos" role="tab" aria-controls="nav-eventos" aria-selected="false">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="servicos" data-toggle="tab" href="#nav-servicos" role="tab" aria-controls="nav-servicos" aria-selected="false">Serviços</a>
+                    </li>
+                </ul>
+                <!-- Conteudo do tab !-->
+                <div class="tab-content mt-5" id="myTabContent">
+                    <!-- conteudo dentro de tab de curso !-->
+                    <div class="tab-pane fade show active" id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
+                        <!-- Primeiro grupo de cursos !-->
+                        <div class="card mt-3">
+                            <div class="card-header">Área: Educação Física</div>
+                            <div class="card-body">
+                               <table class="table table-sm">
+                                   <thead>
+                                    <tr>
+                                       <th scope="col"></th>
+                                       <th scope="col">Nomes dos Cursos em Ofertas</th>
+                                       <th scope="col" class="position-fixed">Data fim inscrição</th>
+                                    </tr>
+                                   </thead>
+                                   <tbody>
+                                       <tr>
+                                           <th scope="row"><a href="dados-do-curso.html"><i class="fas fa-edit"></i></a></th>
+                                           <td scope="row">15° Seminário Internacional Concepções Contemporâneas em Dança</td>
+                                           <td scope="row">31/12/2019 23:59:69</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row"><i class="fas fa-edit"></i></th>
+                                           <td scope="row">Curso “Análise de Desempenho no Futebol: Teoria e Prática/Módulo 2”</td>
+                                           <td scope="row">31/12/2019 23:59:69</td>
+                                       </tr>
+                                   </tbody>
+                               </table>
+                            </div>
+                        </div>
+                        <!-- Segundo grupo de cursos !-->
+                        <div class="card mt-3">
+                            <div class="card-header">Área: Faculdade de Direito da UFMG</div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nomes dos Cursos em Ofertas</th>
+                                        <th scope="col">Data fim inscrição</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">Curso de Extensão/Iniciação: Crime e Castigo</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">Curso de Extensão/Iniciação: Direito, Gênero e Violência</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- conteudo dentro de tab de eventos !-->
+                    <div class="tab-pane fade show" id="nav-eventos" role="tabpanel" aria-labelledby="nav-eventos-tab">
+                        <!-- Primeiro grupo de eventos !-->
+                        <div class="card mt-3">
+                            <div class="card-header">Área: Oftalmologia</div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nomes dos Cursos em Ofertas</th>
+                                        <th scope="col">Data fim inscrição</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">Evento 11890/2016 - Oftalmopediatria Unifesp</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">Evento 11890/2019 - Oftalmopediatria Unifesp</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Segundo grupo de eventos !-->
+                        <div class="card mt-3">
+                            <div class="card-header">Área: Eventos</div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nomes dos Cursos em Ofertas</th>
+                                        <th scope="col">Data fim inscrição</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">REVISTA BRASILEIRA DE AGROPECUÁRIA SUSTENTÁVEL (RBAS)</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">PROJETO CD: TEMPO DE CELEBRAR</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">XVII Congresso ABEQUA - Associação Brasileira de Estudos do Quaternário</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">Campanha de Doação de um Piano Acústico e/ou Digital para a UFV</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="fas fa-edit"></i></th>
+                                        <td scope="row">VI Simpósio Internacional de Entomologia da UFV</td>
+                                        <td scope="row">31/12/2019 23:59:69</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="nav-servicos" role="tabpanel" aria-labelledby="nav-servicos-tab">
+                        Nenhum registro encontrado
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </div>
+</main>
+
+<script src="js/jquery-3.4.0.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
