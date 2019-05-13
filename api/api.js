@@ -1,16 +1,17 @@
 var url = 'https://servicos.conveniar.com.br/autenticacao/api/eventos/oauth/token';
 const username = '155';
 const password = 'goto';
-var Auth_Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNTUiLCJqdGkiOiJhMTg0MDllNy1iYjdjLTQwMWYtODg4NC02YTc3MWJhMTEwZmUiLCJuYW1lSWQiOiIxNTUiLCJ0eXBlVXNlciI6IlJlc291cmNlQXBpIiwicm9sZSI6IkV2ZW50b3MiLCJ1c3VhcmlvIjoiMTU1IiwiZXhwIjoxNTU3Nzc3NzI0LCJpc3MiOiJodHRwOi8vc2Vydmljb3MuY29udmVuaWFyLmNvbS5icjo1MDcxNyIsImF1ZCI6IlJlc291cmNlQXBpIn0.fsaGdHToNBpRsGrjubIkfN9172m972YKvRgFlErPMLc";
+var Auth_Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNTUiLCJqdGkiOiIyYmYzZjE1MC1kNmI3LTQyZTctOTg2MC1kYzg2MTBiZTkyYzMiLCJuYW1lSWQiOiIxNTUiLCJ0eXBlVXNlciI6IlJlc291cmNlQXBpIiwicm9sZSI6IkV2ZW50b3MiLCJ1c3VhcmlvIjoiMTU1IiwiZXhwIjoxNTU3Nzg1MTMzLCJpc3MiOiJodHRwOi8vc2Vydmljb3MuY29udmVuaWFyLmNvbS5icjo1MDcxNyIsImF1ZCI6IlJlc291cmNlQXBpIn0.MkQmvWw7OucBsNfMcygQkk_dVEM_k7ACcaGp1gCT3pg";
 
 axios.defaults.baseURL = 'https://servicos.conveniar.com.br/';
 axios.defaults.headers.common['Authorization'] = Auth_Token;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
+var navCurso = $("#nav-cursos");
 
-var inicioCard = $(".card, .mt-3");
-var cardHeader = $(".card-header");
-var cardBody = $(".card-body");
+var inicioCard = $(".card.mt-3");
+//var cardHeader = $(".card-header");
+//var cardBody = $(".card-body");
 var tabelaHeader = $("<table class=\"table table-sm\">" +"<thead>\n" + "<tr>\n" + "<th scope=\"col\"></th>\n" +
     "<th scope=\"col\">Nomes dos Cursos em Ofertas</th>\n" + "<th scope=\"col\" class=\"\">Data fim inscrição</th>\n" +
     "</tr>\n" + "</thead>");
@@ -35,7 +36,6 @@ function autentificar() {
         password: password
     }
     }).then(function (resp) {
-       //console.log(resp.data.AccessToken);
         if (resp.status === 401){
             //console.log("Error");
         }else {
@@ -50,20 +50,21 @@ function listarCategoriasEventos() {
     axios.get("https://servicos.conveniar.com.br/servicos/api/eventos/categorias")
         .then(function (resp) {
             resp.data.forEach(e => {
-                //novoCardTitulo(e.NomeEventoCategoria);
-                listarEventoPorCategoria(e.CodEventoCategoria);
+                var card = novoCardTitulo(e.NomeEventoCategoria);
+                listarEventoPorCategoria(card, e.CodEventoCategoria);
             })
         }).catch(function (error) {
             console.log("Mensagem: " + error.message);
     })
 }
 
-function listarEventoPorCategoria(CodEventoCategoria) {
+function listarEventoPorCategoria(card, CodEventoCategoria) {
     axios.get("https://servicos.conveniar.com.br/servicos/api/eventos/"+CodEventoCategoria)
         .then(function (resp) {
             resp.data.forEach(e => {
                 if(e.StatusEvento === "Em oferta"){
-                    novoCardBodyNomeEvento(e.NomeEvento);
+                    novoCardBodyNomeEvento(card, e.NomeEvento, e.NumeroVagas);
+
                 }
             })
         }).catch(function (error) {
@@ -72,14 +73,33 @@ function listarEventoPorCategoria(CodEventoCategoria) {
 }
 
 function novoCardTitulo(NomeCategoria) {
-    inicioCard.append(cardHeader.text(NomeCategoria));
-    return inicioCard;
-}
-function novoCardBodyNomeEvento(NomeEvento) {
-    inicioCard.append(cardBody);
-    inicioCard.append(tabelaHeader);
-    inicioCard.append(tabelaBody);
-    inicioCard.append(linhaNomeEvento.text(NomeEvento));
+    var card = $("<div class=\"card mt-3\"/>");
+    //var cardHeader = $(`<div class="card-header" id="categoriaEvento">Area: ${NomeCategoria}</div>`);
+    card.html(`<div class="card-header">Área: ${NomeCategoria}</div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nomes dos Cursos em Ofertas</th>
+                                        <th scope="col">Numero de Vagas</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>`);
 
-    return inicioCard;
+    navCurso.append(card);
+    return card;
+}
+
+function novoCardBodyNomeEvento(card, NomeEvento, NumeroVagas) {
+    var cardTableBody = $(`.card-body`, card);
+    cardTableBody.append(` <tr>
+                                <th scope="row"><i class="fas fa-edit"></i></th>
+                                <td scope="row">${NomeEvento}</td>
+                                <td scope="row"></td>
+                           </tr>`);
 }
