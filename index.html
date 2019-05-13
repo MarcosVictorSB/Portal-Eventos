@@ -42,10 +42,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="dashboard.html" class="form_login">
                     <div class="form-group">
                         <label for="exampleInputEmail">Email</label>
-                        <input type="password" class="form-control" id="exampleInputEmail" placeholder="Email">
+                        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
                     </div>
 
                     <div class="form-group">
@@ -55,7 +55,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Entrar</button>
+                <button type="button" class="btn btn-primary" id="botaoLogin" onclick="capturarLogin()">Entrar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
@@ -88,63 +88,13 @@
                     <div class="tab-pane fade show active" id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
                         <!-- Primeiro grupo de cursos !-->
                         <div class="card mt-3">
-                            <div class="card-header">Área: Educação Física</div>
+                            <div class="card-header" id="categoriaEvento">Titulo</div>
                             <div class="card-body">
-                               <table class="table table-sm">
-                                   <thead>
-                                    <tr>
-                                       <th scope="col"></th>
-                                       <th scope="col">Nomes dos Cursos em Ofertas</th>
-                                       <th scope="col" class="">Data fim inscrição</th>
-                                    </tr>
-                                   </thead>
-                                   <tbody>
-                                       <tr>
-                                           <th scope="row"><a href="dados-do-curso.html"><i class="fas fa-edit"></i></a></th>
-                                           <td scope="row">15° Seminário Internacional Concepções Contemporâneas em Dança</td>
-                                           <td scope="row">31/12/2019 23:59:69</td>
-                                       </tr>
-                                       <tr>
-                                           <th scope="row"><i class="fas fa-edit"></i></th>
-                                           <td scope="row">Curso “Análise de Desempenho no Futebol: Teoria e Prática/Módulo 2”</td>
-                                           <td scope="row">31/12/2019 23:59:69</td>
-                                       </tr>
-                                   </tbody>
+
+
                                </table>
                             </div>
                         </div>
-                        <!-- Segundo grupo de cursos !-->
-                        <div class="card mt-3">
-                            <div class="card-header">Área: Faculdade de Direito da UFMG</div>
-                            <div class="card-body">
-                                <table class="table table-sm">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Nomes dos Cursos em Ofertas</th>
-                                        <th scope="col">Data fim inscrição</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fas fa-edit"></i></th>
-                                        <td scope="row">Curso de Extensão/Iniciação: Crime e Castigo</td>
-                                        <td scope="row">31/12/2019 23:59:69</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fas fa-edit"></i></th>
-                                        <td scope="row">Curso de Extensão/Iniciação: Direito, Gênero e Violência</td>
-                                        <td scope="row">31/12/2019 23:59:69</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-
-
-
-
-
                         </div>
                     </div>
                     <!-- conteudo dentro de tab de eventos !-->
@@ -228,9 +178,11 @@
     </div>
 </main>
 
-<script src="js/jquery-3.4.0.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/modal.js"></script>
+<script src="js/js/jquery-3.4.0.js"></script>
+<script src="js/js/bootstrap.bundle.js"></script>
+<script src="js/js/bootstrap.min.js"></script>
+<script src="js/js/modal.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="api/api.js"></script>
 </body>
 </html>
