@@ -19,7 +19,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
-                <a href="#">Area do Aluno</a>
+                <a href="dashboard.html">Area do Aluno</a>
                 <div id="close-sidebar">
                     <i class="fas fa-times"></i>
                 </div>
@@ -31,8 +31,8 @@
                 </div>
                 <!--  Foto com o nome do usuario!-->
                 <div class="user-info">
-                    <span class="user-name">Usuario <strong>Do Eventos</strong></span>
-                    <span class="user-role">Aluno</span>
+                    <span class="user-name"><strong>Usuario</strong></span>
+                    <span class="user-role" id="nomeDoAluno">Aluno</span>
                 </div>
             </div>
             <!-- sidebar-search  -->
@@ -166,10 +166,10 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputContato">Contato</label>
-                        <input type="number" class="form-control" id="inputContato" placeholder="Contato">
+                        <input type="text" class="form-control" id="inputContato" placeholder="Contato">
                     </div>
                 </div>
-                <h2>Enderenço</h2>
+                <h2>Endereço</h2>
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-3">
@@ -208,8 +208,8 @@
                     <div class="form-group col-md-4">
                         <label for="inputState">Estados</label>
                         <select id="inputState" class="form-control">
-                            <option selected>Escolha o estado</option>
-                            <option>...</option>
+                            <option selected value="default">Escolha o estado</option>
+                            <option value="estado1">...</option>
                         </select>
                     </div>
                 </div>
@@ -227,6 +227,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/js/dash.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="api/api.js"></script>
 
 </body>
 

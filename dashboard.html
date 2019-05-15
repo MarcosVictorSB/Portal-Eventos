@@ -31,8 +31,8 @@
                 </div>
                 <!--  Foto com o nome do usuario!-->
                 <div class="user-info">
-                    <span class="user-name">Usuario <strong>Do Eventos</strong></span>
-                    <span class="user-role">Aluno</span>
+                    <span class="user-name"><strong>Usuario</strong></span>
+                    <span class="user-role" id="nomeDoAluno">Aluno</span>
                 </div>
             </div>
             <!-- sidebar-search  -->
@@ -96,15 +96,28 @@
                         </div>
                     </li>
 
-                    <li class="header-menu">
-                        <span>Dados Pessoais - 2</span>
-                    </li>
+                    <li class="header-menu"><span>Dados Pessoais - 2</span></li>
                     <li>
                         <a href="dados-pessoais.html">
                             <i class="fa fa-book"></i>
                             <span>Dados Pessoais</span>
                         </a>
                     </li>
+
+                    <li class="header-menu"><span>Sistema</span></li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-bell"></i>
+                            <span>Notificação</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sair</span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
             <!-- sidebar-menu  -->
@@ -182,6 +195,8 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/js/dash.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="api/api.js"></script>
 
 </body>
 
